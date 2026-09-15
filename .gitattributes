@@ -1,0 +1,47 @@
+# =============================================================================
+# .gitattributes — Terraform project line ending normalization
+# =============================================================================
+
+# Default: auto-detect text files and normalize to LF
+* text=auto eol=lf
+
+# ---------------------------------------------------------------------------
+# Terraform — LF for Linux CI/CD agents (Azure DevOps, GitHub Actions)
+# ---------------------------------------------------------------------------
+*.tf            text eol=lf
+*.tfvars        text eol=lf
+*.tfvars.json   text eol=lf
+*.hcl           text eol=lf
+.terraform.lock.hcl text eol=lf
+
+# ---------------------------------------------------------------------------
+# Terraform supporting files
+# ---------------------------------------------------------------------------
+*.yml           text eol=lf
+*.yaml          text eol=lf
+*.json          text eol=lf
+*.sh            text eol=lf
+Makefile        text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+*.md            text eol=lf
+
+# ---------------------------------------------------------------------------
+# Windows pipeline scripts — CRLF if run on Windows agents
+# ---------------------------------------------------------------------------
+*.ps1           text eol=crlf
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+
+# ---------------------------------------------------------------------------
+# Binary & Terraform state — no conversion
+# ---------------------------------------------------------------------------
+*.tfstate       binary
+*.tfstate.*     binary
+*.tfplan        binary
+*.zip           binary
+*.tar           binary
+*.gz            binary
+*.png           binary
+*.jpg           binary
+*.pdf           binary
