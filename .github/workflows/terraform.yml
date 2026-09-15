@@ -59,6 +59,13 @@ jobs:
         with:
           terraform_version: 1.6.6
 
+      - name: Verify Terraform backend settings
+        run: |
+          test -n "$TF_STATE_RESOURCE_GROUP" || (echo "TF_STATE_RESOURCE_GROUP is missing" && exit 1)
+          test -n "$TF_STATE_STORAGE_ACCOUNT" || (echo "TF_STATE_STORAGE_ACCOUNT is missing" && exit 1)
+          test -n "$TF_STATE_CONTAINER" || (echo "TF_STATE_CONTAINER is missing" && exit 1)
+          test -n "$TF_STATE_KEY" || (echo "TF_STATE_KEY is missing" && exit 1)
+
       - name: Terraform Init
         run: |
           terraform init \
@@ -114,6 +121,13 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
+
+      - name: Verify Terraform backend settings
+        run: |
+          test -n "$TF_STATE_RESOURCE_GROUP" || (echo "TF_STATE_RESOURCE_GROUP is missing" && exit 1)
+          test -n "$TF_STATE_STORAGE_ACCOUNT" || (echo "TF_STATE_STORAGE_ACCOUNT is missing" && exit 1)
+          test -n "$TF_STATE_CONTAINER" || (echo "TF_STATE_CONTAINER is missing" && exit 1)
+          test -n "$TF_STATE_KEY" || (echo "TF_STATE_KEY is missing" && exit 1)
 
       - name: Terraform Init
         run: |
