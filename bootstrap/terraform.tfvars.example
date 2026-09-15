@@ -1,0 +1,7 @@
+location = "westus2"
+
+tags = {
+  application = "demo-tf-cicd"
+  purpose     = "terraform-state"
+  owner       = "venkat-agents-lab"
+}

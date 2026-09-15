@@ -1,0 +1,10 @@
+admin_username = "azureadmin"
+admin_ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... replace with your key"
+allowed_ssh_source_cidr = "10.0.0.0/16"
+
+tags = {
+  application = "Capacity Planning and Optimization"
+  owner       = "venkat-agents-lab"
+  environment = "vpn-only"
+  purpose     = "private-vm"
+}
