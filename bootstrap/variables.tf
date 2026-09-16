@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "Resource group name for Terraform state resources."
   type        = string
-  default     = "rg-demo-tf-cicd-tfstate"
+  default     = "tfstate-rg"
 }
 
 variable "location" {
@@ -13,7 +13,7 @@ variable "location" {
 variable "storage_account_name_prefix" {
   description = "Prefix used to generate a globally unique storage account name."
   type        = string
-  default     = "sttfcicd"
+  default     = "tfstatedemotfcicd"
 }
 
 variable "container_name" {
